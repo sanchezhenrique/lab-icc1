@@ -1,13 +1,18 @@
 #include <stdio.h>
 
 int main (){
-  char s1[19], s2[19];
+  char s1[20], s2[20];
   scanf("%s", s1);
   scanf("%s", s2);
 
-  for(int i = 0; i < 19; i++){
+  for(int i = 0; i < 20; i++){
     if(s1[i] != s2[i]){
       printf("Nao sou eu \n");
+      return 0;
+    }
+    //Evita a comparação do LIXO
+    if (s1[i] == '\0') {
+      printf("Sou eu\n");
       return 0;
     }
   }
